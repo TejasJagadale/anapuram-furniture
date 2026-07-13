@@ -39,10 +39,10 @@
 }
 
 .navbar__logo-mark {
-  width: 42px;
+  width: 75px;
   height: 42px;
-  border-radius: 50%;
-  background-color: var(--color-accent);
+  /* border-radius: 50%; */
+  /* background-color: var(--color-accent); */
   color: var(--color-dark);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -51,6 +51,10 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.navbar__logo-mark img{
+  border-radius: 10px;
 }
 
 .navbar__logo-text {
@@ -182,7 +186,7 @@
     max-width: 148px;
   }
   .navbar__logo-mark {
-    width: 36px;
+    width: 60px;
     height: 36px;
     font-size: 1rem;
   }

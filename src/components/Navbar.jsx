@@ -35,11 +35,13 @@ export default function Navbar() {
     <header className={`navbar ${isTransparent ? 'navbar--transparent' : 'navbar--solid'}`}>
       <div className="container navbar__inner">
         <NavLink to="/" className="navbar__logo">
-          <span className="navbar__logo-mark">A</span>
-          <span className="navbar__logo-text">
+          <span className="navbar__logo-mark">
+            <img src="/annalogo.png" alt="Anapuram Logo" />
+          </span>
+          {/* <span className="navbar__logo-text">
             Anapuram
             <small>Wooden Furniture Work</small>
-          </span>
+          </span> */}
         </NavLink>
 
         <nav className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
