@@ -1,0 +1,326 @@
+/* =========================================================
+   HOME.CSS
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 22, 17, 0.58);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: 90px;
+  max-width: 720px;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  margin-bottom: 22px;
+}
+
+.hero p {
+  color: #eae3d7;
+  font-size: 1.12rem;
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 14px;
+}
+
+.hero__scroll-cue span {
+  display: block;
+  width: 4px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  margin: 6px auto 0;
+  animation: scrollCue 1.8s ease infinite;
+}
+
+@keyframes scrollCue {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(14px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ---------- About Preview ---------- */
+.about-preview__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-preview__media {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-preview__media img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.about-preview__badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-hover);
+}
+
+.about-preview__badge strong {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.about-preview__badge span {
+  font-size: 0.78rem;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+
+.about-preview__content p {
+  color: var(--color-text-light);
+  margin-bottom: 18px;
+}
+
+/* ---------- Services grid ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* ---------- Gallery grid ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  height: 280px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.12);
+}
+
+.gallery-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  background-color: rgba(28, 22, 17, 0.32);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card__overlay {
+  opacity: 1;
+}
+
+.gallery-card__category {
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.gallery-card__overlay h4 {
+  color: #ffffff;
+  margin-top: 6px;
+  font-size: 1.15rem;
+}
+
+/* ---------- Testimonials ---------- */
+.testimonial-slider {
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-slider__track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.testimonial-slider__slide {
+  flex: 0 0 100%;
+  padding: 4px;
+}
+
+.testimonial-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  padding: 44px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.testimonial-card__stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+
+.testimonial-card__person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.testimonial-card__person img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card__person h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.testimonial-card__person span {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.testimonial-slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.testimonial-slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-slider__dot.is-active {
+  background-color: var(--color-accent);
+  transform: scale(1.2);
+}
+
+/* ---------- Stats section spacing ---------- */
+.stats-section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-preview__grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .about-preview__media img {
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-card {
+    padding: 30px 22px;
+  }
+  .hero__content {
+    padding-top: 70px;
+  }
+}

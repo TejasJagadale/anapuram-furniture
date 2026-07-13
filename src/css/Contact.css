@@ -1,0 +1,183 @@
+/* =========================================================
+   CONTACT.CSS
+   ========================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-grid__form h2,
+.contact-grid__info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.contact-grid__form-lead {
+  color: var(--color-text-light);
+  margin-bottom: 28px;
+}
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form__field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: var(--color-card);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.15);
+}
+
+.contact-form__error {
+  font-size: 0.8rem;
+  color: #b3402a;
+}
+
+.contact-form__success {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  padding: 50px 34px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form__success h3 {
+  margin: 18px 0 8px;
+  font-size: 1.3rem;
+}
+
+.contact-form__success p {
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}
+
+/* ---------- Business info card ---------- */
+.contact-info-card {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 26px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 22px 0 28px;
+}
+
+.contact-info-list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-info-list__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(200, 155, 60, 0.12);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-list li strong {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.contact-info-list li span,
+.contact-info-list li a {
+  font-size: 0.98rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.contact-info-list li a:hover {
+  color: var(--color-secondary);
+}
+
+.contact-info-card__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contact-map {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  height: 260px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+  .contact-info-card {
+    padding: 28px 22px;
+  }
+  .contact-info-card__actions {
+    flex-direction: column;
+  }
+  .contact-info-card__actions .btn {
+    width: 100%;
+  }
+}

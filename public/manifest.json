@@ -1,0 +1,9 @@
+{
+  "short_name": "Anapuram Furniture",
+  "name": "Anapuram Wooden Furniture Work",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#5A3E2B",
+  "background_color": "#FAF7F2"
+}

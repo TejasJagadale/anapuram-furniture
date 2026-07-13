@@ -1,0 +1,215 @@
+/* =========================================================
+   GLOBAL RESET + DESIGN TOKENS
+   Anapuram Wooden Furniture Work
+   ========================================================= */
+
+:root {
+  /* Brand palette */
+  --color-primary: #5a3e2b; /* Deep Walnut Brown */
+  --color-secondary: #8b5e3c; /* Natural Teak */
+  --color-accent: #c89b3c; /* Luxury Gold */
+  --color-bg: #faf7f2; /* Background */
+  --color-card: #ffffff; /* Cards */
+  --color-dark: #2c241f; /* Dark sections */
+  --color-text: #2a2a2a; /* Body text */
+  --color-text-light: #777777; /* Light text */
+  --color-border: rgba(90, 62, 43, 0.14);
+
+  /* Type */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius / shadow */
+  --radius-card: 12px;
+  --shadow-soft: 0 10px 30px rgba(44, 36, 31, 0.08);
+  --shadow-hover: 0 18px 40px rgba(44, 36, 31, 0.16);
+
+  /* Layout */
+  --container-width: 1200px;
+  --section-padding: 100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grid/flex children default to a content-based min-width, which is the
+   most common cause of horizontal overflow on narrow screens — this
+   resets that so columns can actually shrink below their content size. */
+.container,
+.section,
+.footer__col,
+.about-preview__grid > *,
+.about-story__grid > *,
+.contact-grid > *,
+.service-row > *,
+.feature-grid > *,
+.services-grid > *,
+.gallery-grid > *,
+.workshop-gallery > *,
+.stats > * {
+  min-width: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section--dark {
+  background-color: var(--color-dark);
+  color: #f1ece4;
+}
+
+.section--dark h2,
+.section--dark h3 {
+  color: #fdf9f1;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Reveal-on-scroll utility, toggled via IntersectionObserver in components */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-zoom.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-zoom {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* On narrow screens, a 48px horizontal slide is a large fraction of the
+   viewport width and visibly pushes content past the edge before it
+   settles, reading as a misaligned/overflowing layout. Fall back to a
+   small vertical reveal instead, matching .reveal's motion. */
+@media (max-width: 768px) {
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(24px);
+  }
+
+  .reveal-left.is-visible,
+  .reveal-right.is-visible {
+    transform: translateY(0);
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 0 16px;
+  }
+}

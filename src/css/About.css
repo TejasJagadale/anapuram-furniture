@@ -1,0 +1,151 @@
+/* =========================================================
+   ABOUT.CSS
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(28, 22, 17, 0.62);
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: 70px;
+  max-width: 700px;
+}
+
+.about-hero__content h1 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  margin-bottom: 16px;
+}
+
+.about-hero__content p {
+  color: #eae3d7;
+  font-size: 1.05rem;
+}
+
+/* ---------- Story ---------- */
+.about-story__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-story__media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.about-story__content p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.about-story__mv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.about-story__mv h4 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.about-story__mv h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+.about-story__mv p {
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+/* ---------- Journey timeline year marker ---------- */
+.timeline-year {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--color-primary);
+}
+
+/* ---------- Workshop gallery ---------- */
+.workshop-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.workshop-gallery__item {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  height: 220px;
+}
+
+.workshop-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.workshop-gallery__item:hover img {
+  transform: scale(1.1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .about-story__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .workshop-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-story__mv {
+    grid-template-columns: 1fr;
+  }
+  .about-story__media img {
+    height: 300px;
+  }
+  .workshop-gallery {
+    grid-template-columns: 1fr;
+  }
+}
